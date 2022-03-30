@@ -314,12 +314,6 @@ export default function Header() {
           </div>
         </div>
       </header>
-      {!provider && (
-        <p>
-          No provider found. Install{" "}
-          <a href="https://phantom.app/">Phantom Browser extension</a>
-        </p>
-      )}
     </>
   );
 }
