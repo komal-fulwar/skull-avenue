@@ -17,6 +17,24 @@
   font-family: 'Aldrich', sans-serif;
 } */
 
+
+.mobile {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .mobile {
+    display: block;
+  }
+}
+.web {
+  display: block;
+}
+@media screen and (max-width: 600px) {
+  .web {
+    display: none;
+  }
+}
+
 .vl {
   border-left: 3px solid #f8c307;
   height: 20px;
@@ -14082,8 +14100,8 @@ label:active:after {
   border-radius: 20px;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: contain;
+  object-fit: fill;
 }
 
 .item_details .likes {
