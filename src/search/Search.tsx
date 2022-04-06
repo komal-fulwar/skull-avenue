@@ -11,7 +11,7 @@ const Search = ({ handleSearch }: any) => {
           <div className="space-y-10">
             <div className="box input__box d-flex align-items-center space-x-20">
               <input
-                onInput={() => handleSearch(keyword)}
+                // onInput={() => handleSearch(keyword)}
                 onChange={(t) => setKeyword(t.target.value)}
                 style={{ color: "white" }}
                 type="text"
