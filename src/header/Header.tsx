@@ -31,7 +31,11 @@ interface PhantomProvider {
   request: (method: PhantomRequestMethod, params: any) => Promise<unknown>;
 }
 
-export default function Header() {
+type HeaderProps = {
+  handleWalletAddress?: any;
+};
+
+export default function Header({ handleWalletAddress }: HeaderProps) {
   const [provider, setProvider] = useState<PhantomProvider | undefined>(
     undefined
   );
@@ -57,6 +61,7 @@ export default function Header() {
         console.log(response);
         console.log("wallet account ", response.publicKey.toString());
         setWalletKey(response.publicKey.toString());
+        handleWalletAddress(response.publicKey.toString());
       } catch (err) {
         // { code: 4001, message: 'User rejected the request.' }
       }
