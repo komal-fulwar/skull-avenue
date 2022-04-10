@@ -11498,7 +11498,7 @@ a.btn-outline.disabled:hover {
   border: none !important;
   -webkit-transition: all 0.4s ease-in-out !important;
   transition: all 0.4s ease-in-out !important;
-  background: #566ffe !important;
+  background: #566ffe ;
   position: relative;
   position: relative;
 }

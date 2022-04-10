@@ -160,6 +160,7 @@ export default function ItemDetail() {
                           >
                             <a
                               href={`https://solscan.io/token/${nftDetails.mint}`}
+                              target="_blank"
                               style={{
                                 fontFamily: "Aldrich",
                                 color: "white",

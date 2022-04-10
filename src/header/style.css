@@ -11303,7 +11303,7 @@ input[type="submit"][disabled].btn-white:hover {
 
 button[disabled].btn-primary:hover,
 input[type="submit"][disabled].btn-primary:hover {
-  background-color: #566ffe;
+  /* background-color: #566ffe; */
   color: #fff;
 }
 
@@ -11480,7 +11480,7 @@ a.btn-outline.disabled:hover {
   border: none !important;
   -webkit-transition: all 0.4s ease-in-out !important;
   transition: all 0.4s ease-in-out !important;
-  background: #566ffe !important;
+  background: #566ffe ;
   position: relative;
   position: relative;
 }
