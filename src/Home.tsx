@@ -20,6 +20,7 @@ import Pagination from "@mui/material/Pagination";
 import { totalNfts } from "./utils/constants";
 import FilterList from "./filterList/FilterList";
 import Search from "./search/Search";
+import { getNftsFromWallet, processNftData } from "./utils/utils";
 
 const ConnectButton = styled(WalletDialogButton)`
   width: 100%;
@@ -61,6 +62,12 @@ const Home = (props: HomeProps) => {
 
   const rpcUrl = props.rpcHost;
   const wallet = useWallet();
+
+  const handleWalletAddress = async (address: string) => {
+    console.log(address, "owner address");
+    const nftMetaData = await getNftsFromWallet(address);
+    console.log(nftMetaData, "nftMetaData");
+  };
 
   const anchorWallet = useMemo(() => {
     if (
@@ -137,7 +144,7 @@ const Home = (props: HomeProps) => {
   }, [page, anchorWallet, props.candyMachineId, props.connection]);
   return (
     <>
-      <Header />
+      <Header handleWalletAddress={handleWalletAddress} />
       <FilterList
         handleRankSort={handleRankSort}
         handleRaritySort={handleRaritySort}
