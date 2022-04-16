@@ -4,6 +4,7 @@ const FilterList = ({
   handleRankSort,
   handleRaritySort,
   handleAttCountSort,
+  handleMySkulls,
 }: any) => {
   return (
     <div>
@@ -71,6 +72,7 @@ const FilterList = ({
                         backgroundColor: "#f8c307",
                       }}
                       className="btn"
+                      onClick={handleMySkulls}
                     >
                       <span style={{ fontFamily: "boston", color: "black" }}>
                         MY SKULLS
