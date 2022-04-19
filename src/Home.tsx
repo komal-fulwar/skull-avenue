@@ -15,6 +15,7 @@ import {
   filterByRarity,
   filterByAttCount,
   searchNft,
+  getOwnerNFt,
 } from "./service/api";
 import Pagination from "@mui/material/Pagination";
 import { totalNfts } from "./utils/constants";
@@ -45,6 +46,7 @@ export interface HomeProps {
 const Home = (props: HomeProps) => {
   const [sortToggle, setSortToggle] = useState(false);
   const [page, setPage] = useState(0);
+  const [ownerAddress, setOwnerAddress] = useState("");
   const [isUserMinting, setIsUserMinting] = useState(false);
   const [nft, setNft] = useState([]);
 
@@ -65,6 +67,7 @@ const Home = (props: HomeProps) => {
 
   const handleWalletAddress = async (address: string) => {
     console.log(address, "owner address");
+    setOwnerAddress(address);
     const nftMetaData = await getNftsFromWallet(address);
     console.log(nftMetaData, "nftMetaData");
   };
@@ -139,9 +142,18 @@ const Home = (props: HomeProps) => {
     console.log("searched", res);
   };
 
+  const handleMySkulls = async () => {
+    console.log("mySkulls", ownerAddress);
+    const res = await getOwnerNFt(ownerAddress);
+    console.log(res, "owner nft");
+    setNft(res.mints);
+    // setNft(res.mint_results);
+  };
+
   useEffect(() => {
     getNft(page);
   }, [page, anchorWallet, props.candyMachineId, props.connection]);
+
   return (
     <>
       <Header handleWalletAddress={handleWalletAddress} />
@@ -149,9 +161,10 @@ const Home = (props: HomeProps) => {
         handleRankSort={handleRankSort}
         handleRaritySort={handleRaritySort}
         handleAttCountSort={handleAttCountSort}
+        handleMySkulls={handleMySkulls}
       />
       <Search handleSearch={handleSearch} />
-      <Body data={nft} />
+      <Body data={nft} ownerAddress={ownerAddress} />
 
       <div
         className="container col-sm-4 bg_white box"
