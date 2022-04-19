@@ -4,13 +4,13 @@ import { getIdFromName, trimString } from "../utils/utils";
 import { useNavigate } from "react-router-dom";
 import { Ellipsis } from "react-bootstrap/esm/PageItem";
 
-export default function Body({ data }: any) {
+export default function Body({ data, ownerAddress }: any) {
   let navigate = useNavigate();
 
   const handleNFTNavigation = (nft: any) => {
     console.log(nft);
     const id = getIdFromName(nft?.name);
-    navigate(`/nft/${id}`);
+    navigate(`/nft/${id}?owner=${ownerAddress}`);
   };
 
   return (

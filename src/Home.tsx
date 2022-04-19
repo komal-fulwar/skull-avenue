@@ -164,7 +164,7 @@ const Home = (props: HomeProps) => {
         handleMySkulls={handleMySkulls}
       />
       <Search handleSearch={handleSearch} />
-      <Body data={nft} />
+      <Body data={nft} ownerAddress={ownerAddress} />
 
       <div
         className="container col-sm-4 bg_white box"

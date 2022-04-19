@@ -13,13 +13,15 @@ import { useEffect, useState } from "react";
 import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
 import { Tooltip, Typography } from "@material-ui/core";
 import React from "react";
+import { getOwnerAddressFromUrl } from "../utils/utils";
 
 export default function ItemDetail() {
   let { nftId } = useParams();
   const [nftDetails, setNftDetails] = useState<any>({});
 
   const getNft = async () => {
-    const res = await getNftDetails(nftId);
+    const ownerAddress = getOwnerAddressFromUrl(window.location.search);
+    const res = await getNftDetails(ownerAddress, nftId);
     setNftDetails(res.mint);
   };
   console.log(nftDetails, "nftDetails");
@@ -252,18 +254,21 @@ export default function ItemDetail() {
                 <div className="d-flex space-x-20"></div>
                 <div className="container p-0 ">
                   <h2 className="text-center">
-                    <a
-                      style={{
-                        fontFamily: "boston",
-                        fill: "black",
-                        color: "black",
-                        backgroundColor: "#f8c307",
-                      }}
-                      href="#"
-                      className="btn w-100 "
-                    >
-                      <i className="ri-search-line"></i>Download
-                    </a>
+                    {nftDetails?.download_url && (
+                      <a
+                        style={{
+                          fontFamily: "boston",
+                          fill: "black",
+                          color: "black",
+                          backgroundColor: "#f8c307",
+                        }}
+                        href={nftDetails?.download_url}
+                        download
+                        className="btn w-100 "
+                      >
+                        <i className="ri-search-line"></i>Download
+                      </a>
+                    )}
                   </h2>
                 </div>
               </div>

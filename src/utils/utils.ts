@@ -36,3 +36,8 @@ export const processNftData = (nftsmetadata: any) => {
   );
   return nftData;
 };
+
+export const getOwnerAddressFromUrl = (url: string) => {
+  const ownerAddress = url.split("=")[1];
+  return ownerAddress;
+};

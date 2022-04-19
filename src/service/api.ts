@@ -14,11 +14,29 @@ export const getAllNft = (page: any): Promise<any> => {
   });
 };
 
-export const getNftDetails = (id: any): Promise<any> => {
+// export const getNftDetails = (id: any): Promise<any> => {
+//   return new Promise(async (resolve, reject) => {
+//   /get_wallet_edition_number?wallet_address=DQAxJrarsJDt8oqfYciKxYw7So4mhBkoQZDSnFUDydYm&edition_no=6858
+//     try {
+//       const res = await axios.get(`${baseUrl}/metadata?edition_no=${id}`);
+//       resolve(res.data);
+//     } catch (err) {
+//       reject(err);
+//     }
+//   });
+// };
+
+export const getNftDetails = (address?: any, id?: any): Promise<any> => {
   return new Promise(async (resolve, reject) => {
-    console.log(id, "id number");
+    let nullAdddress = "";
+    if (address?.length > 0) {
+      nullAdddress = address;
+    }
     try {
-      const res = await axios.get(`${baseUrl}/metadata?edition_no=${id}`);
+      const res = await axios.get(
+        `${baseUrl}/get_wallet_edition_number?wallet_address=${nullAdddress}&edition_no=${id}`
+      );
+
       resolve(res.data);
     } catch (err) {
       reject(err);
