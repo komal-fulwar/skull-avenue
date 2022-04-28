@@ -11,7 +11,14 @@ const FilterList = ({
       <div className=" " style={{ padding: "60px" }}>
         <div className="container ">
           <h2 className="text-center">
-            <a style={{ fontFamily: "boston", color: "black" }}>
+            <a
+              style={{
+                fontFamily: "boston",
+                color: "#f8c307",
+                fontSize: "44px",
+                textShadow: "2px 2px black",
+              }}
+            >
               Skull Collection
             </a>{" "}
           </h2>
