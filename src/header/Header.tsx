@@ -91,7 +91,7 @@ export default function Header({ handleWalletAddress }: HeaderProps) {
       <header
         className="header__1 js-header"
         id="header"
-        style={{ minHeight: "181px", backgroundColor: "#0b1b27" }}
+        style={{ minHeight: "181px", backgroundColor: "#26252a" }}
       >
         <div className="container">
           <div
