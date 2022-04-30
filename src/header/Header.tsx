@@ -116,7 +116,7 @@ export default function Header({ handleWalletAddress }: HeaderProps) {
                   {" "}
                   <a
                     style={{ fontFamily: "boston" }}
-                    className="color_white"
+                    className="color_white custom"
                     href="https://skullavenue.io/"
                   >
                     {" "}
@@ -127,7 +127,7 @@ export default function Header({ handleWalletAddress }: HeaderProps) {
                 <li>
                   <a
                     style={{ fontFamily: "boston" }}
-                    className="color_white"
+                    className="color_white custom"
                     href="https://skullavenue.io/roadmap/"
                   >
                     {" "}
@@ -139,7 +139,7 @@ export default function Header({ handleWalletAddress }: HeaderProps) {
                   {" "}
                   <a
                     style={{ fontFamily: "boston" }}
-                    className="color_white"
+                    className="color_white custom"
                     href="https://skullavenue.io/"
                   >
                     {" "}
@@ -151,7 +151,7 @@ export default function Header({ handleWalletAddress }: HeaderProps) {
                   {" "}
                   <a
                     style={{ fontFamily: "boston" }}
-                    className="color_white"
+                    className="color_white custom"
                     href="https://skullavenue.io/attributes/"
                   >
                     Attributes
@@ -162,7 +162,7 @@ export default function Header({ handleWalletAddress }: HeaderProps) {
                   {" "}
                   <a
                     style={{ fontFamily: "boston" }}
-                    className="color_white"
+                    className="color_white custom"
                     href="https://skullavenue.io/community/"
                   >
                     {" "}

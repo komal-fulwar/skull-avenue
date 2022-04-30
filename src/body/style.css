@@ -151,6 +151,16 @@ a {
 a:hover {
   text-decoration: none;
 }
+.custom {
+  color: #ffffff;
+  padding: 10px;
+}
+
+.custom:hover {
+  color: #ffffff;
+  padding: 10px;
+  border-bottom: solid 5px #f8c307;
+}
 
 .btn.focus,
 .btn:active,
